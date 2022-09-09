@@ -39,12 +39,21 @@ class CoffeeControl extends React.Component {
     this.setState({selectedCoffee: selectedCoffee});
   }
 
+  handleSellSelectedCoffee = (coffeeToSell) => {
+    const changedPoundsRemaining = this.state.mainCoffeeList.filter(coffee => coffee.id !== this.state.selectedCoffee.id).concat(coffeeToSell);
+    this.setState({
+      mainCoffeeList: changedPoundsRemaining,
+      selectedCoffee: coffeeToSell
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if(this.state.selectedCoffee != null) {
-      currentlyVisibleState = <CoffeeDetail coffee = {this.state.selectedCoffee} />
+      currentlyVisibleState = <CoffeeDetail coffee = {this.state.selectedCoffee} 
+      onClickingSell = {this.handleSellSelectedCoffee} />
       buttonText = "Return to coffee list";
     }
     else if (this.state.formVisibleOnPage) {

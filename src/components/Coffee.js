@@ -7,7 +7,7 @@ function Coffee (props) {
       <div onClick = {() => props.whenCoffeeClicked(props.id)}>
         <h3>{props.name} - ${props.price}</h3>
         <p><em>{props.origin} - {props.roast}</em></p>
-        <h4>Quantity-{props.quantity}</h4>
+        <h4>Quantity Remaining(IBS)-{props.quantity}</h4>
       </div>
     </React.Fragment>
   );
@@ -15,12 +15,13 @@ function Coffee (props) {
 
 Coffee.propTypes = {
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   origin: PropTypes.string,
   roast: PropTypes.string,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenCoffeeClicked: PropTypes.func
+  whenCoffeeClicked: PropTypes.func,
+  onClickSell: PropTypes.func
 };
 
 export default Coffee;
