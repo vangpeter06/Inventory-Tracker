@@ -27,7 +27,7 @@ class CoffeeControl extends React.Component {
   }
 
   handleAddingNewCoffeeToList = (newCoffee) => {
-    const newMainCoffeeList = this.state.mainItemList.concat(newCoffee);
+    const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
     this.setState({
       mainCoffeeList: newMainCoffeeList,
       formVisibleOnPage: false 
@@ -40,7 +40,7 @@ class CoffeeControl extends React.Component {
   }
 
   render() {
-    let currentVisibleState = null;
+    let currentlyVisibleState = null;
     let buttonText = null;
 
     if(this.state.selectedCoffee != null) {
@@ -48,17 +48,17 @@ class CoffeeControl extends React.Component {
       buttonText = "Return to coffee list";
     }
     else if (this.state.formVisibleOnPage) {
-      currentVisibleState = <NewCoffeeForm onNewCoffeeCreation = {this.handleAddingNewCoffeeToList} />
+      currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation = {this.handleAddingNewCoffeeToList} />
       buttonText = "Return to coffee list";
     } else {
-      currentVisibleState = <CoffeeList coffeeList = {this.state.mainCoffeeList}
+      currentlyVisibleState = <CoffeeList coffeeList = {this.state.mainCoffeeList}
       onCoffeeSelection = {this.handleChangingSelectedCoffee} />;
       buttonText = "Add Coffee";
     }
 
     return (
       <React.Fragment>
-        {currentVisibleState}
+        {currentlyVisibleState}
         <button onClick = {this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
