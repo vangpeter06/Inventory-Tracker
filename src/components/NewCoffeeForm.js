@@ -8,7 +8,7 @@ function NewCoffeeForm(props) {
     props.onNewCoffeeCreation({
       name: event.target.name.value,
       price: event.target.price.value,
-      origin: event.target.price.value,
+      origin: event.target.origin.value,
       roast: event.target.roast.value,
       quantity: parseInt(event.target.quantity.value),
       id: v4()
