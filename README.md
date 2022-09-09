@@ -37,7 +37,6 @@ No known bugs at this time
 * Add Edit and Delete functionality
 * Additional Styling
 
-
 ## License
 
 Copyright (c) 2021 Peter Vang
