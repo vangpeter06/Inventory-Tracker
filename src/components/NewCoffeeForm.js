@@ -7,7 +7,7 @@ function NewCoffeeForm(props) {
     event.preventDefault();
     props.onNewCoffeeCreation({
       name: event.target.name.value,
-      price: event.target.price.value,
+      price: parseInt(event.target.price.value),
       origin: event.target.origin.value,
       roast: event.target.roast.value,
       quantity: parseInt(event.target.quantity.value),
@@ -35,7 +35,6 @@ function NewCoffeeForm(props) {
       placeholder="Type of Roast"/>
       <input 
       type = "text"
-      pattern="[0-9*"
       name="quantity"
       placeholder="Enter the amount of Coffee" />
       <button type="submit">Add Coffee</button>
