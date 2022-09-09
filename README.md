@@ -20,7 +20,7 @@ This is a build application in React that tracks inventory for local business. Y
 * _Requires Terminal Installation_
 * _Open the terminal on your local machine_
 * _Navigate to the directory inside of which you wish to house this project_
-* _Clone this project with the following command  `$ git clone https://github.com/vangpeter06/Inventory-Tracker
+* _Clone this project with the following command  `$ git clone https://github.com/vangpeter06/Inventory-Tracker`
 * _Navigate to the root directory by entering `$ cd inventory-tracker`_
 * _Open this project in Visual Studio Code with the command `$ code .`_
 * _Retrieve and install packages needed to run this application with `$ npm install`_
